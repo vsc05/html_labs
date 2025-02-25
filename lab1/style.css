@@ -1,45 +1,47 @@
 body{
-  width: 100em;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background: url("img/backgr2.jpg") center/cover;
-  border-image: fill 0 linear-gradient(#000000, rgba(0, 0, 0, 0.6), rgba(103, 80, 145, 0.6), rgba(114, 65, 65, 0.6))
+  background: url("img/backgr2.jpg");
+  }
+mark{
+  color: rgb(255, 255, 255);
+  font-style: bold;
+  background-color: rgb(218, 112, 230);
+  border-radius: 7px;
 }
 .result { 
-width: 220px;
-height: 40px;
-border-radius: 10px;
-margin-top: 10px;
-margin-bottom: 7px;         /* отступ снизу */
-padding-right: 7px;         /* выступ справа */
-background: rgb(58, 57, 57); /* цвет можно задавать и таким образом */
-text-align: right;           /* примагнитим текст к правой стороне */
-color: #bfe6e6;              /* цвет текста белый */
-font-size: 1.8rem;
-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  width: 220px;
+  height: 40px;
+  border: 2px solid rgb(100, 93, 93);
+  border-radius: 7px;
+  margin-top: 10px;
+  margin-bottom: 7px;         /* отступ снизу */
+  padding-right: 7px;         /* выступ справа */
+  background: rgb(58, 57, 57); /* цвет можно задавать и таким образом */
+  text-align: right;           /* примагнитим текст к правой стороне */
+  color: #bfe6e6;              /* цвет текста белый */
+  font-size: 1.8rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 .my-btn { 
-margin-right: 5px;           /* задаем отступ от кнопки справа */
-margin-top: 5px;             /* задаем отступ от кнопки сверху*/
-width: 50px;                 /* задаем ширину кнопки */
-height: 50px;                /* задаем высоту кнопки */
-border-radius: 10px;          /* округляем кнопку */
-border: none;                /* отключаем обводку */
-background: #516463;         /* задаем серый цвет кнопки */
-color: white;                /* задаем белый цвет текста внутри кнопки */
-font-size: 1.5rem;           /* увеличим размер шрифта */
-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* сменим шрифт */
-cursor: pointer;             /* при наведении на кнопку курсор будет изменен со стрелки на 'указательный палец' */
-user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
+  margin-right: 5px;           /* задаем отступ от кнопки справа */
+  margin-top: 5px;             /* задаем отступ от кнопки сверху*/
+  width: 50px;                 /* задаем ширину кнопки */
+  height: 50px;                /* задаем высоту кнопки */
+  border-radius: 7px;          /* округляем кнопку */
+  border: 2px solid rgb(81, 88, 93);                /* отключаем обводку */
+  background: #505555;         /* задаем серый цвет кнопки */
+  color: white;                /* задаем белый цвет текста внутри кнопки */
+  font-size: 1.5rem;           /* увеличим размер шрифта */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* сменим шрифт */
+  cursor: pointer;             /* при наведении на кнопку курсор будет изменен со стрелки на 'указательный палец' */
+  user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
 } 
 .my-btn.execute { 
 width: 50px;          /* сделаем кнопку шире других */
-border-radius: 10px;   /* подкорректируем округлость */
+border-radius: 7px;   /* подкорректируем округлость */
 }
 .my-btn.zero { 
 width: 110px;          /* сделаем кнопку шире других */
-border-radius: 10px;   /* подкорректируем округлость */
+border-radius: 7px;   /* подкорректируем округлость */
 }
 .my-btn.primary { 
 background: #01b7ff; /* цвет кнопки оранжевый */
@@ -57,42 +59,37 @@ filter: brightness(120%); /* при наведение курсора на кн�
 display: grid;
 place-items: center;
 width: 250px;
-height: 353px;          
+height: 355px;          
 background: #141414;
-border-radius: 10px;
-margin-top: -400px;
+border-radius: 7px;
+border: 2px solid rgb(47, 54, 62);
 }
 .ldtheme{
-width: 50px;
+width: 150px;
 height: 50px;
 font-size: 2rem;
 margin-top: 20px;
-background-color: #516463;
-border-radius: 50%;
+margin-bottom: 20px;
+background-color:#01b7ff;
+border: 2px solid rgb(55, 132, 148);
+border-radius: 7px;
 cursor: pointer;             /* при наведении на кнопку курсор будет изменен со стрелки на 'указательный палец' */
 user-select: none; 
 color: rgb(255, 255, 255);
 }
-.spisok{
-width: 100px;
-height: 50px;
-font-size: 2rem;
-margin-right: 20px;
-margin-bottom: 100px;
-background-color: #516463;
-color: rgb(255, 255, 255);
-border-radius: 15px;
-}
-.spisok2{
-  background-color: #516463;
-  font-size: 1.5rem;
-  margin-top: 10px;
-  color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
 .text{
-  width: 300px;
+  line-height: 25px;
+  text-align: center;
+  width: 515px;
   color: white;
   font-weight: 700;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border: 2px solid rgb(225, 133, 225);
+  border-radius: 7px;
+}
+.parent{
+  display: flex;
+  justify-content:center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

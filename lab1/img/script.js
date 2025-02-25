@@ -6,18 +6,6 @@ window.onload = function(){
     let b = ''
     let expressionResult = ''
     let selectedOperation = null
-
-    const outputElement = document.getElementById("result")
-
-    function updateFontSize() {
-        if (+a > 999999999) {
-            outputElement.style.fontSize = '1.3rem';
-        } 
-        if (+a > 999999999999999){
-            outputElement.style.fontSize = '0.9rem';
-        }
-    }
-
     document.getElementById('btn_op_clr').addEventListener('click', function() {
         if (document.body.style.backgroundColor === 'rgb(28, 60, 44)'){
             document.body.style.backgroundColor = '#927c4c';
@@ -34,20 +22,20 @@ window.onload = function(){
         }
     });
     
+    outputElement = document.getElementById("result")
+    
     digitButtons = document.querySelectorAll('[id ^= "btn_digit_"]')
     
     function onDigitButtonClicked(digit) {
         if (!selectedOperation) {
             if ((digit != '.') || (digit == '.' && !a.includes(digit))) { 
                 a += digit
-                updateFontSize()
             }
             outputElement.innerHTML = a
         } else {
             if ((digit != '.') || (digit == '.' && !b.includes(digit))) { 
                 b += digit
-                outputElement.innerHTML = b  
-                updateFontSize()    
+                outputElement.innerHTML = b       
             }
         }
     }
@@ -133,7 +121,6 @@ window.onload = function(){
         selectedOperation = ''
         expressionResult = ''
         outputElement.innerHTML = 0
-         outputElement.style.fontSize = '1.8rem'
     }
 
 
@@ -164,9 +151,5 @@ window.onload = function(){
         selectedOperation = null
     
         outputElement.innerHTML = a
-        updateFontSize()
-        
     }
-
-
     };
