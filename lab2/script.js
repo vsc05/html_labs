@@ -7,14 +7,18 @@ window.onload = function(){
     let expressionResult = ''
     let selectedOperation = null
 
+ //   const outputHistory = document.getElementById("history")
     const outputElement = document.getElementById("result")
 
     function updateFontSize() {
-        if (+a > 999999999) {
+        if ((a.length > 16) || (a > 999999999999999)){
+            outputElement.style.fontSize = '0.9rem';
+        }
+        else if ((a.length > 7) || (a > 999999)) {
             outputElement.style.fontSize = '1.3rem';
         } 
-        if (+a > 999999999999999){
-            outputElement.style.fontSize = '0.9rem';
+        else {
+            outputElement.style.fontSize = '1.8rem';
         }
     }
 
@@ -47,7 +51,26 @@ window.onload = function(){
             if ((digit != '.') || (digit == '.' && !b.includes(digit))) { 
                 b += digit
                 outputElement.innerHTML = b  
-                updateFontSize()    
+                updateFontSize() 
+                switch(selectedOperation) { 
+                    case 'x':
+                        expressionResult = (+a) * (+b)
+                        console.log(expressionResult);
+                        break;
+                    case '+':
+                        expressionResult = (+a) + (+b)
+                        break;
+                    case '-':
+                        expressionResult = (+a) - (+b)
+                        break;
+                    case '/':
+                        expressionResult = (+a) / (+b)
+                        break;
+                    case '%':
+                        expressionResult = (+a) % (+b)
+                        break;
+                }
+
             }
         }
     }
@@ -65,18 +88,27 @@ window.onload = function(){
             if (a.length > 0) {
                 a = a.slice(0, -1); 
                 outputElement.innerHTML = a || '0';
+                updateFontSize()  
             }
         } else {
             if (b.length > 0) {
                 b = b.slice(0, -1); 
                 outputElement.innerHTML = b || '0';
+                updateFontSize()  
+
             }
         }
     };
 
     document.getElementById("btn_op_mult").onclick = function() { 
         if (a === '') return
+        if (selectedOperation){
+            a = expressionResult
+            b = ''
+            outputElement.innerHTML = a
+        }
         selectedOperation = 'x'
+
     }
     document.getElementById("btn_op_plus").onclick = function() { 
         if (a === '') return
@@ -98,6 +130,7 @@ window.onload = function(){
         if (a === '') return
         a =  (+a) * 1000
         outputElement.innerHTML = a
+        updateFontSize()
     }
     document.getElementById("btn_op_cube").onclick = function() { 
         if (a === '') return
@@ -162,11 +195,13 @@ window.onload = function(){
         a = expressionResult.toString()
         b = ''
         selectedOperation = null
-    
+     //  outputHistory.innerHTML += a 
+     //   outputHistory.innerHTML += " "
         outputElement.innerHTML = a
         updateFontSize()
         
     }
+
 
 
     };
